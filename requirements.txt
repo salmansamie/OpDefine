@@ -1,3 +1,6 @@
+pip install -U pip
+pip install -r requirements.txt
+
 aiodns==1.1.1
 aiohttp==3.3.1
 aniso8601==3.0.2

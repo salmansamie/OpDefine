@@ -12,7 +12,6 @@ click==6.7
 Flask==1.0.2
 Flask-RESTful==0.3.6
 gunicorn
-Flask
 idna==2.7
 idna-ssl==1.0.1
 itsdangerous==0.24

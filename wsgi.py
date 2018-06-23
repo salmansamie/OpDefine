@@ -3,14 +3,11 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from OpDefine import DFX
-from flask_cors import CORS
 
 __authon__ = "salmansamie"
 
 
 application = Flask(__name__)
-CORS(application, resources={r"/api/v3/*": {"origins": "*"}})
-
 fsk_api = Api(application)
 
 
@@ -29,6 +26,6 @@ class GetMultipart(Resource):
 
 
 if __name__ == "__main__":
-    fsk_api.add_resource(OpenDefineApi, '/')
+    # fsk_api.add_resource(OpenDefineApi, '/')
     fsk_api.add_resource(GetMultipart, '/api/v3/<string:param>')
     application.run(debug=True)

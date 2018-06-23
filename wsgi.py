@@ -11,6 +11,15 @@ application = Flask(__name__)
 fsk_api = Api(application)
 
 
+@application.route('/')
+def default_route():
+    return '''{
+        "project author": "Salman Rahman (salmansamie)",
+        "source code": "https://github.com/salmansamie/OpDefine.git",
+        "license": "GNU GPL v3.0"
+    }'''
+
+
 class OpenDefineApi(Resource):
     def get(self):
         return {
@@ -26,6 +35,6 @@ class GetMultipart(Resource):
 
 
 if __name__ == "__main__":
-    fsk_api.add_resource(OpenDefineApi, '/')
+    # fsk_api.add_resource(OpenDefineApi, '/')
     fsk_api.add_resource(GetMultipart, '/api/v3/<string:param>')
     application.run(debug=True)

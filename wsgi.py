@@ -20,13 +20,13 @@ def default_route():
     }'''
 
 
-class OpenDefineApi(Resource):
-    def get(self):
-        return {
-            "project author": "Salman Rahman (salmansamie)",
-            "source code": "https://github.com/salmansamie/OpDefine.git",
-            "license": "GNU GPL v3.0"
-        }
+# class OpenDefineApi(Resource):
+#     def get(self):
+#         return {
+#             "project author": "Salman Rahman (salmansamie)",
+#             "source code": "https://github.com/salmansamie/OpDefine.git",
+#             "license": "GNU GPL v3.0"
+#         }
 
 
 class GetMultipart(Resource):

@@ -3,6 +3,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from OpDefine import DFX
+import json
 
 __authon__ = "salmansamie"
 
@@ -12,7 +13,8 @@ fsk_api = Api(application)
 
 
 class OpenDefineApi(Resource):
-    def get(self):
+    @staticmethod
+    def get():
         return {
             "project author": "Salman Rahman (salmansamie)",
             "source code": "https://github.com/salmansamie/OpDefine.git",
@@ -21,11 +23,12 @@ class OpenDefineApi(Resource):
 
 
 class GetMultipart(Resource):
-    def get(self, param):
-        return DFX(param).define()
+    @staticmethod
+    def get(param):
+        return json.dumps(DFX(param).define())          # type: dict
 
 
 if __name__ == "__main__":
-    # fsk_api.add_resource(OpenDefineApi, '/')
+    fsk_api.add_resource(OpenDefineApi, '/')
     fsk_api.add_resource(GetMultipart, '/api/v3/<string:param>')
     application.run(debug=True)

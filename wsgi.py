@@ -3,11 +3,14 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from OpDefine import DFX
+from flask_cors import CORS
 
 __authon__ = "salmansamie"
 
 
 application = Flask(__name__)
+CORS(application, resources={r"/api/v3/*": {"origins": "*"}})
+
 fsk_api = Api(application)
 
 

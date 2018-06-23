@@ -28,4 +28,4 @@ class GetMultipart(Resource):
 if __name__ == "__main__":
     fsk_api.add_resource(OpenDefineApi, '/')
     fsk_api.add_resource(GetMultipart, '/api/v3/<string:param>')
-    application.run()
+    application.run(debug=True)
